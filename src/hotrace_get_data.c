@@ -6,7 +6,7 @@
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/13 13:23:31 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/13 16:30:12 by tbeauzam         ###   ########.fr       */
+/*   Updated: 2017/05/14 15:03:36 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,23 @@ void			add_to_head(t_list **head, char *s)
 	}
 }
 
-void			put_into_one_buffer(t_data *d, char *s, t_list *head)
+static void		gather_info(t_data *d, t_list *tmp, int i, int j)
+{
+
+	if (tmp->data[j] == '\n')
+	{
+		if (!d->end_duo)
+			d->nb_duo += 1;
+		if (tmp->data[j + 1] == '\n')
+			d->end_duo = i;
+	}
+}
+
+static void		put_into_one_buffer(t_data *d, char *s, t_list *head)
 {
 	t_list		*tmp;
-	int			i;
-	int			j;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
 	tmp = head;
@@ -56,13 +68,9 @@ void			put_into_one_buffer(t_data *d, char *s, t_list *head)
 		j = 0;
 		while (tmp->data[j])
 		{
-			if (tmp->data[j] == '\n')
-			{
-				if (!d->end_duo)
-					d->nb_duo += 1;
-				if (tmp->data[j + 1] == '\n')
-					d->end_duo = i;
-			}
+			gather_info(d, tmp, i, j);
+			if (d->nb_duo & 0x01)
+				d->value_size += 1;
 			s[i] = tmp->data[j];
 			j += 1;
 			i += 1;
@@ -73,8 +81,8 @@ void			put_into_one_buffer(t_data *d, char *s, t_list *head)
 
 char			*read_stdin(t_data *d)
 {
-	int			ret;
-	int			total;
+	size_t		ret;
+	size_t		total;
 	char		buf[BUFF_SIZE + 1];
 	t_list		*head;
 
@@ -90,6 +98,7 @@ char			*read_stdin(t_data *d)
 	if (!(d->data = (char *)malloc(sizeof(char) * (total + 1))))
 		return (NULL);
 	d->data[total] = '\0';
+	d->total = total;
 	put_into_one_buffer(d, d->data, head);
 	return ("");
 }

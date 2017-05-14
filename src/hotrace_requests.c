@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   hotrace_requests.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/13 01:11:38 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/13 22:22:35 by tbeauzam         ###   ########.fr       */
+/*   Created: 2017/05/14 14:53:43 by tbeauzam          #+#    #+#             */
+/*   Updated: 2017/05/14 15:01:52 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hotrace.h"
 
-unsigned int		ft_strlen(char *s)
+void				treat_requests(t_data *d, t_dic **table)
 {
-	int				i;
+	size_t	i;
+	size_t	j;
 
-	i = 0;
-	while (s[i])
+	i = d->end_duo;
+	while (i < d->end_duo)
+	{
+		j = 0;
+		while (d->data[i + j] != '\n')
+			j += 1;
 		i += 1;
-	return (i);
+	}
 }

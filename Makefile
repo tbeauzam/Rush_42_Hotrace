@@ -6,7 +6,7 @@
 #    By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 13:59:02 by tbeauzam          #+#    #+#              #
-#    Updated: 2017/05/13 14:42:04 by tbeauzam         ###   ########.fr        #
+#    Updated: 2017/05/14 14:54:56 by tbeauzam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,9 @@ CC			=	clang
 FLAGS		=	-O3 -Wall -Wextra -Werror
 SRC_NAME	=	main_hotrace.c \
 				hotrace_get_data.c \
+				hotrace_sorting.c \
+				hotrace_table.c \
+				hotrace_requests.c \
 				ft_strsplit.c \
 				ft_putstr.c \
 				ft_strlen.c \
