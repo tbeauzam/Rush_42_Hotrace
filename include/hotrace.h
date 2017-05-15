@@ -6,7 +6,7 @@
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/13 00:50:08 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/14 15:01:15 by tbeauzam         ###   ########.fr       */
+/*   Updated: 2017/05/14 17:47:21 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@
 # include <stdio.h>
 
 # define BUFF_SIZE	200000
-# define HASH_SIZE	500
+# define HASH_SIZE	2048
+# define HASH_CONST	5385
+# define PRNT_SIZE	65535
 
 typedef struct		s_dic
 {
@@ -47,9 +49,11 @@ typedef struct		s_data
 	size_t			index_mem_dic;
 	size_t			index_mem_value;
 	size_t			total;
+	size_t			buff_index;
 	char			*mem_value;
 	char			*data;
 	char			*value;
+	char			buffer[PRNT_SIZE + 1];
 	unsigned long	hash;
 }					t_data;
 
