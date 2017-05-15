@@ -6,7 +6,7 @@
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/13 13:23:31 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/14 19:17:11 by tbeauzam         ###   ########.fr       */
+/*   Updated: 2017/05/14 19:25:17 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void			add_to_head(t_list **head, char *s)
 
 static void		gather_info(t_data *d, t_list *tmp, int i, int j)
 {
-
 	if (tmp->data[j] == '\n')
 	{
 		if (!d->end_duo)

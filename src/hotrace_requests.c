@@ -6,7 +6,7 @@
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/14 14:53:43 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/14 17:05:56 by tbeauzam         ###   ########.fr       */
+/*   Updated: 2017/05/14 19:26:13 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static void		check_existence(t_data *d, t_dic **table, size_t *i, size_t j)
 	is_in_it(d, table[d->hash % HASH_SIZE], tmp);
 }
 
-void				treat_requests(t_data *d, t_dic **table)
+void			treat_requests(t_data *d, t_dic **table)
 {
 	size_t	i;
 	size_t	j;

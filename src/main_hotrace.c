@@ -6,7 +6,7 @@
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/13 00:57:39 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/14 19:18:05 by tbeauzam         ###   ########.fr       */
+/*   Updated: 2017/05/14 19:25:36 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ unsigned long		hash_djb(char *s)
 	return (hash);
 }
 
-int			prepare_memory(t_data *d)
+int					prepare_memory(t_data *d)
 {
 	if (!(d->mem_dic = (t_dic *)malloc(sizeof(t_dic) * (d->nb_duo >> 1))))
 		return (0);
