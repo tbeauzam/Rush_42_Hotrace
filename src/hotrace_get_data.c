@@ -6,7 +6,7 @@
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/13 13:23:31 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/14 15:03:36 by tbeauzam         ###   ########.fr       */
+/*   Updated: 2017/05/14 19:17:11 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ char			*read_stdin(t_data *d)
 	d->data[total] = '\0';
 	d->total = total;
 	put_into_one_buffer(d, d->data, head);
+	d->head = head;
 	return ("");
 }

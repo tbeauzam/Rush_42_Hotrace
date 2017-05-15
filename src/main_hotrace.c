@@ -6,7 +6,7 @@
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/13 00:57:39 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/14 16:24:21 by tbeauzam         ###   ########.fr       */
+/*   Updated: 2017/05/14 19:18:05 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,27 +51,12 @@ int					main(void)
 	d.value = NULL;
 	d.total = 0;
 	d.buff_index = 0;
+	d.head = NULL;
 	ft_bzero(d.buffer, sizeof(d.buffer));
 	read_stdin(&d);
 	if (!(prepare_memory(&d)))
 		return (1);
 	hash_keys(&d, table);
 	treat_requests(&d, table);
-//	printf("Heya : \n");
-//	ft_putstr(d.data);
-//	printf("nb lignes : %d\nDebut requetes : %d\nTaille totale values : %d\n", d.nb_duo, d.end_duo, d.value_size);
-//	printf("sizeof t_dic : %lU\n", sizeof(t_dic));
-/*	t_dic *tmp;
-	for (int i = 0; i < HASH_SIZE; i++)
-	{
-		tmp = table[i];
-		while (tmp)
-		{
-			printf(" --> Hash : %lu | value : %s", tmp->key_hash, tmp->value);
-			fflush(NULL);
-			tmp = tmp->next;
-		}
-		printf("\n");
-	}
-*/	return (0);
+	return (0);
 }

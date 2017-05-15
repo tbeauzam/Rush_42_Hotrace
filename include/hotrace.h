@@ -6,7 +6,7 @@
 /*   By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/13 00:50:08 by tbeauzam          #+#    #+#             */
-/*   Updated: 2017/05/14 17:47:21 by tbeauzam         ###   ########.fr       */
+/*   Updated: 2017/05/14 19:16:39 by tbeauzam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <sys/uio.h>
 # include <stdio.h>
 
-# define BUFF_SIZE	200000
+# define BUFF_SIZE	300000
 # define HASH_SIZE	2048
 # define HASH_CONST	5385
 # define PRNT_SIZE	65535
@@ -43,6 +43,7 @@ typedef struct		s_data
 {
 	t_dic			*mem_dic;
 	t_dic			*new_dic;
+	t_list			*head;
 	size_t			nb_duo;
 	size_t			end_duo;
 	size_t			value_size;
@@ -60,17 +61,13 @@ typedef struct		s_data
 unsigned int		ft_strlen(char *s);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, void const *src, size_t n);
-void				*ft_memmove(void *dst, void const *src, size_t len);
-char				*ft_strchr(char const *s, int c);
 char				*ft_strdup(char const *s1);
 void				ft_strdel(char **as);
-void				ft_putstr(char *s);
-//char				**ft_strsplit(char *s, char c);
 
 char				*read_stdin(t_data *d);
 void				hash_keys(t_data *d, t_dic **table);
 unsigned long		hash_djb(char *s);
 void				put_in_table(t_data *d, t_dic **table);
-void				treat_requests(t_data *d, t_dic **table);;
+void				treat_requests(t_data *d, t_dic **table);
 
 #endif

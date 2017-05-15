@@ -6,7 +6,7 @@
 #    By: tbeauzam <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 13:59:02 by tbeauzam          #+#    #+#              #
-#    Updated: 2017/05/14 14:54:56 by tbeauzam         ###   ########.fr        #
+#    Updated: 2017/05/14 19:16:23 by tbeauzam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,9 @@ SRC_NAME	=	main_hotrace.c \
 				hotrace_sorting.c \
 				hotrace_table.c \
 				hotrace_requests.c \
-				ft_strsplit.c \
-				ft_putstr.c \
 				ft_strlen.c \
 				ft_bzero.c \
-				ft_memmove.c \
 				ft_memcpy.c \
-				ft_strchr.c \
 				ft_strdup.c \
 				ft_strdel.c
 OBJ_NAME	=	$(SRC_NAME:.c=.o)
