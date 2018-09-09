@@ -1,5 +1,5 @@
 # Rush_42_Hotrace
-This is a command line program.
+Hotrace is a command line program, made in a maximum of 48 hours.
 The aim of this project is to make a tiny search engine, that takes a file as input and displays results directly onto standard output. The execution speed was mesured by an external tool and all results were compared with result of others students.
 
 ## Usage:
